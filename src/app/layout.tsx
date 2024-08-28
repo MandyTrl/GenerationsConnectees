@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Albert_Sans } from "next/font/google"
 import "./globals.css"
 import { Navbar } from "@/components/navigation/Navbar"
 
-const inter = Inter({ subsets: ["latin"] })
+const albertSans = Albert_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "Générations Connectées",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="fr">
-			<body className={`${inter.className} h-full w-full`}>
+			<body className={`${albertSans.className} h-full w-full`}>
 				<Navbar />
 
 				<main className="py-28 px-40">{children}</main>
