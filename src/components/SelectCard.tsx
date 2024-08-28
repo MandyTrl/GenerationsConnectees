@@ -2,12 +2,15 @@ import React from "react"
 
 type SelectCardProps = {
 	profil: string
+	onClick: () => void
 }
 
-export const SelectCard = ({ profil }: SelectCardProps) => {
+export const SelectCard = ({ profil, onClick }: SelectCardProps) => {
 	return (
-		<div className="w-2/4 shadow-sm ring-1 ring-secondary/10 bg-secondary/10 rounded-lg p-4 m-3 hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out uppercase text-center">
-			<p className="font-bold">{profil}</p>
+		<div
+			className="w-2/4 border border-secondary/80 rounded-xl m-3 p-4 hover:cursor-pointer hover:shadow-sm hover:bg-secondary/20 hover:border-transparent hover:translate-t-2 transition-all duration-300 ease-in-out uppercase text-center"
+			onClick={onClick}>
+			<p className="text-xl font-semibold">{profil}</p>
 		</div>
 	)
 }

@@ -20,7 +20,7 @@ export default function RootLayout({
 			<body className={`${inter.className} h-full w-full`}>
 				<Navbar />
 
-				<main className="py-20 px-40">{children}</main>
+				<main className="py-28 px-40">{children}</main>
 			</body>
 		</html>
 	)

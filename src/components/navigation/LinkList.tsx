@@ -7,7 +7,7 @@ export const LinkList = () => {
 		<ul className="flex justify-end">
 			{navbarLinks.map((el: NavbarLinks) => {
 				return (
-					<li key={el.title} className="pl-4">
+					<li key={el.title} className="pl-10">
 						<Link href={el.slug}>{el.title}</Link>
 					</li>
 				)
