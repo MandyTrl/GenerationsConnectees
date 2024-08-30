@@ -1,30 +1,95 @@
 import Image from "next/image"
 import { SelectSection } from "@/components/SelectSection"
 import introImg from "@assets/pictures/philippe-leone-unsplash.jpg"
+import logo from "@assets/illustrations/logo.png"
+import illustration from "@assets/illustrations/walking.jpg"
 
 export default function Home() {
 	return (
 		<main className="w-full flex flex-col">
-			<h1 className="w-3/4 font-semibold text-7xl my-8">
-				Générations Connectées
-			</h1>
+			<div className="flex items-center">
+				<Image src={logo} width={220} alt="" height={0} />
 
-			<div className="relative w-full h-[600px] rounded-t-3xl place-self-center my-8">
+				<h2 className="w-3/4 font-semibold text-7xl my-8 ml-4">
+					Pour conserver le lien intergénérationnel
+				</h2>
+			</div>
+			<div className="relative w-full h-[600px] rounded-3xl place-self-center my-8">
 				<Image
 					src={introImg}
 					width={1000}
 					alt=""
 					height={0}
-					className="w-full h-full object-cover rounded-t-3xl"
+					className="w-full h-full object-cover rounded-3xl"
 				/>
-
-				<p className="w-3/5 bg-white absolute -bottom-8 left-1/2 -translate-x-1/2 rounded-lg py-6 text-xl text-center font-semibold">
-					Pour conserver le lien intergénérationnel 🫶
-					{/* redonner une place social et faire tomber les préjugés */}
-				</p>
 			</div>
 
 			<SelectSection />
+
+			<p className="text-4xl font-semibold">
+				Découvrez des histoires de vies et faites partie de la leur.
+			</p>
+
+			<div className="flex items-start mt-8">
+				<Image
+					src={illustration}
+					width={440}
+					alt=""
+					height={0}
+					className="mr-8"
+				/>
+
+				<div>
+					<div>
+						<p>
+							Vous souhaiter créer des relations authentiques, briser
+							l'isolement, partager des passions ou encore mettre vos
+							compétences au services des autres ?{" "}
+							<span className="font-semibold">Générations Connectées</span> aide
+							à redonner une place sociale, tisser du lien et à faire tomber les
+							préjugés à travers différentes expériences.
+						</p>
+					</div>
+
+					<div>
+						<div className="my-8">
+							<p className="text-2xl flex items-center">
+								<span className="text-base mr-1">🧡</span> Initiez une
+								correspondance
+							</p>
+							<p className="text-2xl flex items-center">
+								<span className="text-base mr-1">🧡</span> Devenez
+								parrain/marraine/filleul(e)
+							</p>
+							<p className="text-2xl flex items-center">
+								<span className="text-base mr-1">🧡</span> Participez à un cours
+								de photographie
+							</p>
+							<p className="text-2xl flex items-center">
+								<span className="text-base mr-1">🧡</span> Ou cohabitez avec un
+								ainé/étudiant
+							</p>
+						</div>
+
+						<p>
+							Plus de{" "}
+							<span className="font-semibold text-lg">
+								13 000 duos intergénérationnels{" "}
+							</span>
+							crées, presque autant de colocations entre aînés et étudiants !
+							Mais <span className="font-semibold">Générations Connectées</span>{" "}
+							c'est aussi{" "}
+							<span className="font-semibold text-lg">
+								+200 courriers envoyés
+							</span>{" "}
+							chaque semaine et{" "}
+							<span className="font-semibold text-lg">120 ateliers</span> animés
+							par nos partenaires créant ainsi des moments d'échanges et des
+							souvenirs durables pour chacun.
+						</p>
+					</div>
+				</div>
+			</div>
 		</main>
 	)
 }

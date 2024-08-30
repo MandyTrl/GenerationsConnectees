@@ -8,9 +8,9 @@ type SelectCardProps = {
 export const SelectCard = ({ profil, onClick }: SelectCardProps) => {
 	return (
 		<div
-			className="w-2/4 border border-secondary/80 rounded-xl m-3 p-4 hover:cursor-pointer hover:shadow-sm hover:bg-secondary/20 hover:border-transparent hover:translate-t-2 transition-all duration-300 ease-in-out uppercase text-center"
+			className="w-2/4 h-28 flex items-center justify-center bg-secondary/10 rounded-xl m-3 p-4 hover:cursor-pointer shadow-sm hover:bg-secondary/30 hover:translate-t-2 transition-all duration-300 ease-in-out uppercase text-center"
 			onClick={onClick}>
-			<p className="text-xl font-semibold">{profil}</p>
+			<p className="text-xl">{profil}</p>
 		</div>
 	)
 }

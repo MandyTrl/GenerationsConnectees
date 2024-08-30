@@ -11,10 +11,17 @@ export const SelectSection = () => {
 	}
 
 	return (
-		<div className="w-full flex flex-col items-center my-16">
-			<p className="text-2xl font-semibold place-self-start mx-3">Vous êtes</p>
+		<div className="w-full flex flex-col my-16">
+			<p className="text-2xl">
+				Vous souhaitez vous inscrire, ou inscrire votre EHPAD, BDE d'université,
+				entreprise, c'est par ici !
+			</p>
 
-			<div className="w-full flex mt-5">
+			<p className="text-2xl font-semibold place-self-start mt-16 mx-3">
+				Vous êtes :
+			</p>
+
+			<div className="w-full flex my-10">
 				{selectProfil.map((el: SelectProfil, idx: number) => {
 					return (
 						<SelectCard
@@ -24,8 +31,6 @@ export const SelectSection = () => {
 						/>
 					)
 				})}
-
-				<p className="font-semibold text-2xl">{profilSelected}</p>
 			</div>
 		</div>
 	)
