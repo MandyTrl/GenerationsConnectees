@@ -1,13 +1,47 @@
 "use client"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { SelectCard } from "@/components/SelectCard"
-import { selectProfil, SelectProfil } from "@/utils/selectProfil"
+import { Profil, Informations, profils } from "@/utils/selectProfil"
 
 export const SelectSection = () => {
-	const [profilSelected, setProfilSelected] = useState<null | string>(null)
+	const [subcategories, setSubcategories] = useState<null | Informations[]>(
+		null
+	)
+	const [content, setContent] = useState<null | string>(null)
 
-	const handleProfilSelected = (profilSelected: string) => {
-		setProfilSelected(profilSelected)
+	const handleSubcategory = (
+		selectedCategory: Informations[] | Informations
+	) => {
+		const isCompany = !Array.isArray(selectedCategory)
+		if (isCompany) {
+			setContent(selectedCategory.content)
+		} else {
+			setSubcategories(selectedCategory)
+		}
+	}
+
+	const handleContent = (contentSelected: string) => {
+		setContent(contentSelected)
+	}
+
+	const renderCards = () => {
+		const optionsToRender = subcategories || profils
+
+		if (content) {
+			return <SelectCard content={content} />
+		}
+
+		return optionsToRender.map((option: Profil | Informations, idx: number) => (
+			<SelectCard
+				key={idx}
+				content={"category" in option ? option.category : option.subcategory}
+				onClick={() =>
+					"category" in option
+						? handleSubcategory(option.informations)
+						: handleContent(option.content)
+				}
+			/>
+		))
 	}
 
 	return (
@@ -21,17 +55,7 @@ export const SelectSection = () => {
 				Vous êtes :
 			</p>
 
-			<div className="w-full flex my-10">
-				{selectProfil.map((el: SelectProfil, idx: number) => {
-					return (
-						<SelectCard
-							key={idx}
-							profil={el.category}
-							onClick={() => handleProfilSelected(el.category)}
-						/>
-					)
-				})}
-			</div>
+			<div className="w-full md:flex my-10">{renderCards()}</div>
 		</div>
 	)
 }

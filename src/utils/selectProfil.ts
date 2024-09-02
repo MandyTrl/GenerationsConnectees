@@ -1,19 +1,32 @@
-export type SelectProfil = {
+export type Informations = {
+	subcategory: string
+	content: string
+}
+export type Profil = {
 	category: string
-	subcategory?: string[]
+	subcategories?: string[]
+	informations: Informations | Informations[]
 }
 
-export const selectProfil: SelectProfil[] = [
+export const profils: Profil[] = [
 	{
 		category: "un particulier",
-		subcategory: ["une personne âgée", "un étudiant"],
+		informations: [
+			{ subcategory: "une personne âgée", content: "test personne âgée" },
+			{ subcategory: "un étudiant", content: "test étudiant" },
+			{ subcategory: "jeune actif", content: "test jeune actif" },
+		],
 	},
 	{
 		category: "une structure",
-		subcategory: ["un EHPAD", "une université"],
+		informations: [
+			{ subcategory: "un EHPAD", content: "test EHPAD" },
+			{ subcategory: "une université", content: "test BDE université" },
+		],
 	},
 
 	{
 		category: "une entreprise",
+		informations: { subcategory: "une entreprise", content: "test entreprise" },
 	},
 ]

@@ -25,9 +25,9 @@ export const LinkList = () => {
 					<Link href={el.slug}>{el.title}</Link>
 
 					{el.sublinks && isDropdownVisible && (
-						<ul className="absolute bg-white py-2 rounded-b-3xl">
+						<ul className="absolute left-0 bg-white py-2 px-5 rounded-b-3xl">
 							{el.sublinks.map((sublink: NavbarLinks) => (
-								<li key={sublink.title} className="py-1  px-5 ">
+								<li key={sublink.title} className="py-1">
 									<Link href={sublink.slug}>{sublink.title}</Link>
 								</li>
 							))}
