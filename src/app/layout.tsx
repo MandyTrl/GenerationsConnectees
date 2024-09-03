@@ -18,9 +18,11 @@ export default function RootLayout({
 	return (
 		<html lang="fr">
 			<body className={`${albertSans.className} h-full w-full`}>
-				<Navbar />
+				<main className="py-5 px-5 md:px-44">
+					<Navbar />
 
-				<main className="py-28 px-5 md:px-44">{children}</main>
+					{children}
+				</main>
 			</body>
 		</html>
 	)
