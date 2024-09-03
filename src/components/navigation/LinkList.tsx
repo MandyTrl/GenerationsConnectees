@@ -4,14 +4,16 @@ import Link from "next/link"
 import { navbarLinks, NavbarLinks } from "@/utils/navbarLinks"
 
 export const LinkList = () => {
-	const [isDropdownVisible, setDropdownVisible] = useState(false)
+	const [isDropdownVisible, setDropdownIsVisible] = useState<string | null>(
+		null
+	)
 
-	const handleMouseEnter = () => {
-		setDropdownVisible(true)
+	const handleMouseEnter = (link: string) => {
+		setDropdownIsVisible(link)
 	}
 
 	const handleMouseLeave = () => {
-		setDropdownVisible(false)
+		setDropdownIsVisible(null)
 	}
 
 	return (
@@ -20,12 +22,12 @@ export const LinkList = () => {
 				<li
 					key={el.title}
 					className="relative px-5"
-					onMouseEnter={handleMouseEnter}
+					onMouseEnter={() => handleMouseEnter(el.title)}
 					onMouseLeave={handleMouseLeave}>
 					<Link href={el.slug}>{el.title}</Link>
 
-					{el.sublinks && isDropdownVisible && (
-						<ul className="absolute left-0 bg-white py-2 px-5 rounded-b-3xl">
+					{el.sublinks && isDropdownVisible === el.title && (
+						<ul className="absolute left-0 bg-background py-2 px-5 rounded-b-3xl">
 							{el.sublinks.map((sublink: NavbarLinks) => (
 								<li key={sublink.title} className="py-1">
 									<Link href={sublink.slug}>{sublink.title}</Link>

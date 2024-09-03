@@ -1,14 +1,14 @@
 import Image from "next/image"
 import { SelectSection } from "@/components/SelectSection"
-import introImg from "@assets/pictures/philippe-leone-unsplash.jpg"
 import logo from "@assets/illustrations/logo.png"
-import illustration from "@assets/illustrations/walking.jpg"
+import birthdayPicture from "@assets/pictures/abihoward.jpg"
+import introImg from "@assets/pictures/philippe-leone-unsplash.jpg"
 
 export default function Home() {
 	return (
 		<main className="w-full flex flex-col">
 			<div className="flex items-center">
-				<Image src={logo} width={220} alt="" height={0} />
+				<Image src={logo} width={200} alt="" height={0} />
 
 				<h2 className="w-3/4 font-semibold text-7xl my-8 ml-4">
 					Pour conserver le lien intergénérationnel
@@ -26,31 +26,28 @@ export default function Home() {
 
 			<SelectSection />
 
-			<p className="text-4xl font-semibold">
+			<p className="text-4xl font-semibold mb-6">
 				Découvrez des histoires de vies et faites partie de la leur.
+			</p>
+
+			<p>
+				Vous souhaiter créer des relations authentiques, briser l'isolement,
+				partager des passions ou encore mettre vos compétences au services des
+				autres ? <span className="font-semibold">Générations Connectées</span>{" "}
+				aide à redonner une place sociale, tisser du lien et à faire tomber les
+				préjugés à travers différentes expériences.
 			</p>
 
 			<div className="flex items-start mt-8">
 				<Image
-					src={illustration}
-					width={440}
+					src={birthdayPicture}
+					width={470}
 					alt=""
 					height={0}
-					className="mr-8"
+					className="mr-8 rounded-3xl"
 				/>
 
 				<div>
-					<div>
-						<p>
-							Vous souhaiter créer des relations authentiques, briser
-							l'isolement, partager des passions ou encore mettre vos
-							compétences au services des autres ?{" "}
-							<span className="font-semibold">Générations Connectées</span> aide
-							à redonner une place sociale, tisser du lien et à faire tomber les
-							préjugés à travers différentes expériences.
-						</p>
-					</div>
-
 					<div>
 						<div className="my-8">
 							<p className="text-2xl flex items-center">
