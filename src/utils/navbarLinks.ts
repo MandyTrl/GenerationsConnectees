@@ -27,4 +27,8 @@ export const navbarLinks: NavbarLinks[] = [
 		title: "Faire un don",
 		slug: "/dons",
 	},
+	{
+		title: "Connexion",
+		slug: "/connexion",
+	},
 ]
