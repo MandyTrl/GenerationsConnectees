@@ -3,13 +3,18 @@ import React from "react"
 import { Field, FieldProps } from "../../components/UI/Field"
 import { connexionFields } from "../../utils/connexionForm"
 import { Button } from "../../components/UI/Button"
+import { GoogleButton } from "../../components/UI/GoogleButton"
 
 export default function Connexion() {
 	return (
 		<main className="w-full flex flex-col items-center">
-			<div className="flex items-center">Se connecter</div>
+			<form className="w-full md:w-2/5 flex flex-col bg-secondary/20 p-10 rounded-md shadow-sm">
+				<div className="text-lg font-semibold">Se connecter avec</div>
 
-			<form className="w-2/4 flex flex-col bg-secondary/20 p-10 rounded-md shadow-sm">
+				<GoogleButton onClick={() => console.log("connexion réussie")} />
+
+				<div className="text-lg font-semibold mt-8">Ou</div>
+
 				{connexionFields.map((el: FieldProps) => {
 					return (
 						<Field
