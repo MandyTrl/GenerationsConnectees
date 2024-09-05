@@ -1,6 +1,6 @@
 import React from "react"
 
-enum FieldTypes {
+export enum FieldTypes {
 	Text = "text",
 	Email = "email",
 	Password = "password",
@@ -14,18 +14,28 @@ enum FieldTypes {
 	Url = "url",
 }
 
-type FieldProps = {
-	title: string
-	labelTitle?: string
+export type FieldProps = {
+	name: string
+	placeholder?: string
 	type: FieldTypes
 	id: string
+	icon: boolean
 }
 
-export const Field = ({ id, title, labelTitle, type }: FieldProps) => {
+export const Field = ({
+	id,
+	name,
+	placeholder,
+	type,
+	icon = false,
+}: FieldProps) => {
 	return (
-		<>
-			<label htmlFor={id}>{labelTitle}</label>
-			<input type={type} id={id} name="fname" />
-		</>
+		<input
+			type={type}
+			placeholder={placeholder}
+			id={id}
+			name={name}
+			className="w-full rounded-md p-4 my-2 focus:outline-secondary/70"
+		/>
 	)
 }
