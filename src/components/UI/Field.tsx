@@ -1,4 +1,3 @@
-import Link from "next/link"
 import React from "react"
 
 export enum FieldTypes {
@@ -20,7 +19,8 @@ export type FieldProps = {
 	placeholder?: string
 	type: FieldTypes
 	id: string
-	icon: boolean
+	icon?: boolean
+	resetPassword?: boolean
 }
 
 export const Field = ({
@@ -28,8 +28,10 @@ export const Field = ({
 	name,
 	placeholder,
 	type,
-	icon = false,
+	icon,
+	resetPassword,
 }: FieldProps) => {
+	console.log(resetPassword)
 	return (
 		<>
 			<input
@@ -39,10 +41,12 @@ export const Field = ({
 				name={name}
 				className="w-full rounded-md p-4 my-2 focus:outline focus:outline-2 outline-secondary/70"
 			/>
-			{type === FieldTypes.Password && (
-				<Link href={"/"} className="place-self-center text-sm underline">
-					Mot de passe oublié ?
-				</Link>
+			{resetPassword && (
+				<button
+					onClick={() => console.log("réinitialisation du mot de passe")}
+					className="place-self-center text-sm underline hover:opacity-85 transition-all ease-in duration-150">
+					<a>Mot de passe oublié ?</a>
+				</button>
 			)}
 		</>
 	)
